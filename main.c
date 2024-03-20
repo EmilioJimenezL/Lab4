@@ -161,7 +161,7 @@ void printArray(int arr[], int n) {
 void generateRandomArray(int arr[], int n) {
     srand(time(NULL));
     for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 1000; // Generar números aleatorios entre 0 y 999
+        arr[i] = rand() % 1001; // Generar números aleatorios entre 0 y 1000
     }
 }
 
@@ -170,7 +170,7 @@ int main() {
     char continuar;
 
     do {
-        printf("Ingrese el número de elementos a ordenar: ");
+        printf("Ingrese el numero de elementos a ordenar: \n");
         scanf("%d", &n);
 
         int arr[n], arr_copy[n]; // Array para almacenar los datos a ordenar
@@ -180,14 +180,13 @@ int main() {
         printf("\nArreglo sin ordenar:\n");
         printArray(arr, n);
 
-        printf("\nSeleccione el método de ordenamiento:\n");
+        printf("\nSeleccione el metodo de ordenamiento:\n");
         printf("1. Bubble sort\n");
         printf("2. Selection sort\n");
         printf("3. Insertion sort\n");
         printf("4. Merge sort\n");
         printf("5. Quick sort\n");
         printf("6. Radix sort\n");
-        printf("Ingrese su elección: ");
         scanf("%d", &choice);
 
         clock_t start, end; // Variables para medir el tiempo de ejecución
@@ -246,13 +245,13 @@ int main() {
                 printArray(arr_copy, n);
                 break;
             default:
-                printf("\nOpción no válida.\n");
+                printf("\nOpcion no valida.\n");
                 return 1;
         }
 
         printf("\nTiempo de ordenamiento: %f segundos\n", cpu_time_used);
 
-        printf("\n¿Desea continuar ordenando? (s/n): ");
+        printf("\nDesea ordenar un nuevo arreglo? (s/n):\n");
         scanf(" %c", &continuar);
 
     } while (continuar == 's' || continuar == 'S');
